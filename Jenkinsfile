@@ -25,6 +25,14 @@ pipeline {
                 sh 'docker push rama25krishna/nodeapp:$BUILD_NUMBER'
             }
         }
+        
+        stage('Run Container') {
+            steps {
+                script {
+                    sh "docker run -d --name node-app rama25krishna/nodeapp:$BUILD_NUMBER"
+                }
+            }
+
 }
 post {
         always {
