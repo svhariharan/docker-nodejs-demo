@@ -30,6 +30,7 @@ pipeline {
             steps {
                     sh "docker run -d --name node-app rama25krishna/nodeapp:$BUILD_NUMBER"
             }
+        }   
 }
 post {
         always {
