@@ -31,6 +31,12 @@ pipeline {
                     sh "docker run -d --name node_app_2 rama25krishna/nodeapp_1:$BUILD_NUMBER"
             }
         }   
+
+                stage('Run Second Job') {
+            steps {
+                    build job: 'sib_job_2', wait: true
+            }
+        }  
 }
 post {
         always {
