@@ -25,18 +25,6 @@ pipeline {
                 sh 'docker push rama25krishna/nodeapp_1:$BUILD_NUMBER'
             }
         }
-
-#        stage('Stop Docker Container') {
-#            steps{
-#                sh "docker stop node_app_2"
-#            }
-#        }   
-
-#        stage('Remove Docker Container') {
-#            steps{
-#                sh "docker rm node_app_2"
-#           }
-#        }    
         
         stage('Run Container') {
             steps {
