@@ -28,7 +28,7 @@ pipeline {
         
         stage('Run Container') {
             steps {
-                    sh "docker run -d --name node_app_3 rama25krishna/nodeapp_1:$BUILD_NUMBER"
+                    sh "docker run -d --name node_app_$BUILD_NUMBER rama25krishna/nodeapp_1:$BUILD_NUMBER"
             }
         }   
 
