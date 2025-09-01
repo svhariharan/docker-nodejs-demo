@@ -26,21 +26,21 @@ pipeline {
             }
         }
 
-        stage('Stop Docker Container') {
-            steps{
-                sh "docker stop node_app_2"
-            }
-        }   
+#        stage('Stop Docker Container') {
+#            steps{
+#                sh "docker stop node_app_2"
+#            }
+#        }   
 
-        stage('Remove Docker Container') {
-            steps{
-                sh "docker rm node_app_2"
-           }
-        }    
+#        stage('Remove Docker Container') {
+#            steps{
+#                sh "docker rm node_app_2"
+#           }
+#        }    
         
         stage('Run Container') {
             steps {
-                    sh "docker run -d --name node_app_2 rama25krishna/nodeapp_1:$BUILD_NUMBER"
+                    sh "docker run -d --name node_app_3 rama25krishna/nodeapp_1:$BUILD_NUMBER"
             }
         }   
 
