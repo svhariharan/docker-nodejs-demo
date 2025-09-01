@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t rama25krishna/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t rama25krishna/nodeapp_1:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,13 +22,13 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push rama25krishna/nodeapp:$BUILD_NUMBER'
+                sh 'docker push rama25krishna/nodeapp_1:$BUILD_NUMBER'
             }
         }
         
         stage('Run Container') {
             steps {
-                    sh "docker run -d --name node_app_1 rama25krishna/nodeapp:$BUILD_NUMBER"
+                    sh "docker run -d --name node_app_2 rama25krishna/nodeapp:$BUILD_NUMBER"
             }
         }   
 }
