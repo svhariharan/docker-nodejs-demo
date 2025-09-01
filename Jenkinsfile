@@ -28,15 +28,13 @@ pipeline {
 
         stage('Stop Docker Container') {
             steps{
-                def containerName = "node_app_2"
-                sh "docker stop ${containerName}"
+                sh "docker stop node_app_2"
             }
         }   
 
         stage('Remove Docker Container') {
             steps{
-                def containerName = "node_app_2"
-                sh "docker rm ${containerName}"
+                sh "docker rm node_app_2"
            }
         }    
         
